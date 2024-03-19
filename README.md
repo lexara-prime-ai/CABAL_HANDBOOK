@@ -7,9 +7,10 @@
     
     `build-depends:    
         base ^>=4.17.2.1,
-        text ^>=1.2.4.0` 
+        text ^>=1.2.4.0
+    `
     
-2.  **Update dependencies**: After modifying the `.cabal` file, you need to update your project's dependencies. Open a terminal, navigate to your project directory, and run:
+3.  **Update dependencies**: After modifying the `.cabal` file, you need to update your project's dependencies. Open a terminal, navigate to your project directory, and run:
     
     bashCopy code
     
@@ -17,7 +18,7 @@
     
     This command updates the package index, ensuring you have the latest information about available packages.
     
-3.  **Install dependencies**: Once you've updated the package index, you can install the dependencies specified in your `.cabal` file by running:
+4.  **Install dependencies**: Once you've updated the package index, you can install the dependencies specified in your `.cabal` file by running:
     
     bashCopy code
     
@@ -25,7 +26,7 @@
     
     This command installs the dependencies listed in your `.cabal` file, but it does not install the project itself. It's useful for fetching and installing the required packages.
     
-4.  **Build your project**: After installing the dependencies, you can build your project by running:
+5.  **Build your project**: After installing the dependencies, you can build your project by running:
     
     bashCopy code
     
@@ -33,7 +34,7 @@
     
     This command compiles your project and generates the necessary executables.
     
-5.  **Run your project**: If your project produces an executable, you can run it using:
+6.  **Run your project**: If your project produces an executable, you can run it using:
     
     bashCopy code
     
