@@ -5,10 +5,11 @@
     
     cabalCopy code
     
-    `build-depends:    
+    ```cabal
+        build-depends:    
         base ^>=4.17.2.1,
         text ^>=1.2.4.0
-    `
+    ```
     
 3.  **Update dependencies**: After modifying the `.cabal` file, you need to update your project's dependencies. Open a terminal, navigate to your project directory, and run:
     
