@@ -40,3 +40,39 @@
     
 
 Following these steps should allow you to install Haskell packages to your project using Cabal. Make sure to replace `text` with the actual package names you want to install.
+
+
+
+
+
+
+### In case there are any missing dependencies
+
+
+### Verifying dependency installation
+
+You can use the `dpkg` command to query information about installed packages on Debian-based systems like Debian itself or Ubuntu. Here's how you can check for the path of zlib using `dpkg`:
+
+```bash
+dpkg -L zlib1g-dev
+``` 
+
+This command lists all the files installed by the `zlib1g-dev` package, including the location of header files like `zlib.h`.
+
+If you want to check for the path of the zlib library itself (libz), you can use:
+
+```bash
+dpkg -L zlib1g
+``` 
+
+This will show you the location of the library file (`libz.so`) and any other files installed by the `zlib1g` package.
+
+If `zlib1g-dev` is not installed, you might want to install it using `apt`:
+
+
+```bash
+sudo apt update
+sudo apt install zlib1g-dev
+```
+
+Once you have `zlib1g-dev` installed, you can use `dpkg -L` to find its path as described above.
