@@ -46,10 +46,40 @@ Following these steps should allow you to install Haskell packages to your proje
 
 
 
-### In case there are any missing dependencies
+# In case there are any missing dependencies
 
+You may encounter an error while trying to install the `zlib` package, which is a dependency of `scotty`. The error message indicates that `cabal` is unable to find the necessary header file (`zlib.h`) and C library (`z`) for `zlib`.
 
-### Verifying dependency installation
+Here are a few steps you can take to resolve this issue:
+
+1.  **Install the zlib Development Package**: You'll need to install the development package for zlib, which usually includes the necessary header files and libraries required for development. On most Linux distributions, this package is typically named something like `zlib-devel` or `zlib1g-dev`. You can install it using your package manager. For example, on Ubuntu, you can run:
+    
+    
+    `sudo apt-get install zlib1g-dev` 
+    
+    On CentOS/RHEL:
+   
+    
+    `sudo yum install zlib-devel` 
+    
+    On macOS with Homebrew:
+   
+    
+    `brew install zlib` 
+    
+2.  **Specify Include and Library Directories**: If you have installed zlib in a non-standard location, you may need to specify the include and library directories using the `--extra-include-dirs` and `--extra-lib-dirs` flags when running `cabal install`. For example:
+    
+    
+    `cabal install scotty --extra-include-dirs=/path/to/zlib/include --extra-lib-dirs=/path/to/zlib/lib` 
+    
+3.  **Verify zlib Installation**: After installing the zlib development package, make sure that the `zlib.h` header file and the `z` library are accessible in the standard locations.
+    
+4.  **Check Build Logs**: If the issue persists, you can try re-running `cabal` with increased verbosity (`-v3`) to get more detailed error messages. This might help pinpoint the exact problem.
+    
+
+Once you've resolved the issue with `zlib`, you should be able to successfully install `scotty` using `cabal`.
+
+# Verifying dependency installation
 
 You can use the `dpkg` command to query information about installed packages on Debian-based systems like Debian itself or Ubuntu. Here's how you can check for the path of zlib using `dpkg`:
 
